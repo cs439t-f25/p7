@@ -1,0 +1,54 @@
+Due date:
+    11/12/2025 @ 11:59pm (test and t0)
+    11/14/2025 @ 11:59pm (everything working)
+
+
+Assignment:
+
+    - learn how to program in Go
+    - finish the implementation of an over-simplified network simulation
+    - donate a test case <csid>.go, <csid>.ok
+
+The switch simulator:
+
+    - runs on top of simple switch simulator with parameterized failure
+      modes: https://github.com/cs439t-f25/layer2.
+
+    - you can browse the source code for the switch but you don't
+      have to clone it. Your assignment repo will do that for you
+      by importing it.
+
+    - you can submit pull requests to add documentation, fix typos
+      fix bugs, etc. Not required but highly appreciated.
+
+Your submission:
+
+    - uses the switch simulator to implement TCP-like, full-duplex
+      byte streams.
+
+    - Look at the layer2.Mgr interface for a description of the
+      2 functions you need to implement.
+
+Rules:
+
+    - All network communications should go through the switch
+
+    - You can only use shared memory and other side-channels for
+      debugging purposes.
+
+    - You can use the standard Go "log" package to print debug
+      and other informative messages. Use of "stdout" should
+      be limited to the expected test output
+
+    - Please try to preserve the use of WaitGroup and the timeout
+      mechanism used in t0.go.
+
+    - Your implementation should go in the impl package
+
+    - Your test case should not rely on any of the implementation
+      details; only the signature of the impl.NewMgr function and
+      the public interfaces defined in layer2.
+
+    - Add ~gheith/public/go/bin to your PATH in order to pick an up
+      to date release of Golang.
+

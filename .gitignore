@@ -1,0 +1,6 @@
+*.build
+*.diff
+*.result
+*.out
+*.err
+
