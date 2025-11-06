@@ -23,11 +23,11 @@ func (imp *Impl) IfConfig(mac layer2.MacAddr, ifName string) (layer2.Config, err
 	return nil, errors.New("not implemented")
 }
 
-func (imp *ConfigImpl) Connect(config *layer2.Config, myPort uint16, destPort uint16, destName string) (*layer2.Connection, error) {
+func (imp *ConfigImpl) Connect(myPort uint16, destPort uint16, destName string) (*layer2.Connection, error) {
 	return nil, errors.New("not implemented")
 }
 
-func (imp *ConfigImpl) Listen(config *layer2.Config, port uint16) (*layer2.Connection, error) {
+func (imp *ConfigImpl) Listen(port uint16) (*layer2.Connection, error) {
 	return nil, errors.New("not implemented")
 }
 
