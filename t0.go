@@ -15,14 +15,14 @@ var mgr layer2.Mgr
 // host1 behavior
 func host1() {
 
-	err := mgr.IfConfig(layer2.NewMacAddr(1, 2), "host1")
+	config, err := mgr.IfConfig(layer2.NewMacAddr(1, 2), "host1")
 	if err != nil {
 		panic(fmt.Errorf("host1: failed to get config manager: %v", err))
 	}
 
 	log.Printf("host1 configured\n")
 
-	c, err := mgr.Connect(10, 29, "host2")
+	c, err := config.Connect(10, 29, "host2")
 	if err != nil {
 		panic(fmt.Errorf("host1: failed to connect to host2: %v", err))
 	}
@@ -35,12 +35,12 @@ func host1() {
 
 // host2 behvaior
 func host2() {
-	err := mgr.IfConfig(layer2.NewMacAddr(10, 29), "host2")
+	config, err := mgr.IfConfig(layer2.NewMacAddr(10, 29), "host2")
 	if err != nil {
 		panic(fmt.Errorf("host2: failed to get config manager: %v", err))
 	}
 
-	c, err := mgr.Listen(29)
+	c, err := config.Listen(29)
 	if err != nil {
 		panic(fmt.Errorf("host2: failed to listen on port 29: %v", err))
 	}
